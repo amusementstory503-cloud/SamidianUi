@@ -171,9 +171,57 @@ local module = {}
 		newasp(button, 11.9, true)
 		return button
 	end
+	function module.NewButton2(gui, text)
+		text = text or "Button"
+		local button = Instance.new("TextButton", gui.MainFrame.MainScroller)
+		local lab = #gui.MainFrame.MainScroller:GetChildren() - 1
+		button.Name = tostring(lab+1)
+		button.Text = tostring(text)
+		button.Size = UDim2.new(0, 515, 0, 30)
+		button.TextScaled = true
+		button.BackgroundColor3 = Color3.fromRGB(0, 0, 235)
+		button.BorderSizePixel = 0
+		button.TextColor3 = Color3.fromRGB(255, 255, 255)
+		button.Font = Enum.Font.SourceSansBold
+		local corner = Instance.new("UICorner", button)
+		corner.CornerRadius = UDim.new(0, 8)
+		newasp(button, 11.9, true)
+		return button
+	end
+	function module.NewImageButton(gui, image)
+		image = image or "rbxassetid://0"
+		local button = Instance.new("ImageButton", gui.MainFrame.MainScroller)
+		local lab = #gui.MainFrame.MainScroller:GetChildren() - 1
+		button.Name = tostring(lab+1)
+		button.Image = image
+		button.Size = UDim2.new(0, 515, 0, 30)
+		button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		button.BorderSizePixel = 0
+		button.ScaleType = Enum.ScaleType.Fit
+		local corner = Instance.new("UICorner", button)
+		corner.CornerRadius = UDim.new(0, 8)
+		newasp(button, 11.9, true)
+		return button
+	end
+	
+	function module.NewImageButton2(gui, image)
+		image = image or "rbxassetid://0"
+		local button = Instance.new("ImageButton", gui.MainFrame.MainScroller)
+		local lab = #gui.MainFrame.MainScroller:GetChildren() - 1
+		button.Name = tostring(lab+1)
+		button.Image = image
+		button.Size = UDim2.new(0, 515, 0, 30)
+		button.BackgroundColor3 = Color3.fromRGB(0, 0, 235)
+		button.BorderSizePixel = 0
+		button.ScaleType = Enum.ScaleType.Fit
+		local corner = Instance.new("UICorner", button)
+		corner.CornerRadius = UDim.new(0, 8)
+		newasp(button, 11.9, true)
+		return button
+	end
 	
 	function module.NewTextBox(gui, text, clearOnFocus)
-		clearOnFocus = clearOnFocus or true
+		clearOnFocus = clearOnFocus or false
 		local element = Instance.new("TextBox", gui.MainFrame.MainScroller)
 		local lab = #gui.MainFrame.MainScroller:GetChildren() - 1
 		element.Name = tostring(lab+1)
@@ -192,3 +240,4 @@ local module = {}
 	end
 	
 return module
+
